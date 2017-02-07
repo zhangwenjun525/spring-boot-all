@@ -1,0 +1,2 @@
+通过@ConfiguraionProperties注解将配置项封装成对象
+prefix属性设置要配置的前缀名称

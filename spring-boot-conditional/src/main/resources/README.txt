@@ -1,0 +1,2 @@
+@Conditional根据满足某一个条件创建一个特定的Bean。比如说当一个jar包在一个类路径下时，自动配置一个或多个Bean，或者只有某个Bean被创建时才会创建另一个Bean。spring Boot中将大量使用到进行一些自动配置。
+以下示例根据不同文件编码作为条件，实现condition接口重写matches方法判断条件。

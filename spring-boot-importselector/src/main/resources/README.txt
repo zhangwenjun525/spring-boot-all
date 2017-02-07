@@ -1,0 +1,1 @@
+ImportSelector返回值中的类全路径会被spring容器托管。可以通过annotationMetadata中的一些属性去判断具体要加载的类
