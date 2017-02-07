@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * Time: 16:20
  */
 //方法四
-@Component
+//@Component
 public class MyHandler {
 
     @EventListener

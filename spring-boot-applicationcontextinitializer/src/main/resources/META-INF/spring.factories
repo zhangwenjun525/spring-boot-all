@@ -1,0 +1,2 @@
+#方法三
+org.springframework.context.ApplicationContextInitializer=com.zhangwj.project.springboot.applicationcontextinitializer.MyApplicationContextInititializer

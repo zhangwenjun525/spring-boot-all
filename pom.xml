@@ -17,6 +17,8 @@
         <module>spring-boot-environmentpostprocessor</module>
         <module>spring-boot-importselector</module>
         <module>spring-boot-importbeandefinitionregistrar</module>
+        <module>spring-boot-applicationcontextinitializer</module>
+        <module>spring-boot-commandlinerunner</module>
     </modules>
 
     <properties>

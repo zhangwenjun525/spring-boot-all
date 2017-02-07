@@ -1,0 +1,2 @@
+#方法五
+org.springframework.context.ApplicationListener=com.zhangwj.project.springboot.listener.MyListener

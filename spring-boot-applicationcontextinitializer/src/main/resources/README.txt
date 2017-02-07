@@ -1,0 +1,9 @@
+ApplicationContextInitializer接口是在spring容器执行refreshed之前的一个回调。
+使用步骤:
+1.写一个类实现ApplicationContextInitializer接口
+2.注册ApplicationContextInitializer
+
+注册方法:
+方法1：使用SpringApplication.addInitializers进行注册
+方法2：在application.properties配置文件中进行配置
+方法3：可以通过spring.factories机制(/META-INF/spring.factories)
