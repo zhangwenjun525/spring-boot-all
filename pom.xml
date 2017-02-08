@@ -19,6 +19,8 @@
         <module>spring-boot-importbeandefinitionregistrar</module>
         <module>spring-boot-applicationcontextinitializer</module>
         <module>spring-boot-commandlinerunner</module>
+        <module>spring-boot-web</module>
+        <module>spring-boot-freemarker</module>
     </modules>
 
     <properties>
@@ -37,13 +39,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
