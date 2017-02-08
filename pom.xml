@@ -21,6 +21,8 @@
         <module>spring-boot-commandlinerunner</module>
         <module>spring-boot-web</module>
         <module>spring-boot-freemarker</module>
+        <module>spring-boot-servlet</module>
+        <module>spring-boot-interceptor</module>
     </modules>
 
     <properties>
