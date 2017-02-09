@@ -25,6 +25,9 @@
         <module>spring-boot-interceptor</module>
         <module>spring-boot-tomcat-optimize</module>
         <module>spring-boot-jdbc</module>
+        <module>spring-boot-aop</module>
+        <module>spring-boot-starter-customize</module>
+        <module>spring-boot-starter-customize-test</module>
     </modules>
 
     <properties>
