@@ -23,6 +23,8 @@
         <module>spring-boot-freemarker</module>
         <module>spring-boot-servlet</module>
         <module>spring-boot-interceptor</module>
+        <module>spring-boot-tomcat-optimize</module>
+        <module>spring-boot-jdbc</module>
     </modules>
 
     <properties>

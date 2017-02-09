@@ -1,6 +1,7 @@
 package com.zhangwj.project.springboot.filter;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 /**
@@ -10,6 +11,7 @@ import java.io.IOException;
  * Date: 2017/2/8
  * Time: 22:43
  */
+@WebFilter(urlPatterns = "/user.do")
 public class UserFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
