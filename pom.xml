@@ -28,6 +28,10 @@
         <module>spring-boot-aop</module>
         <module>spring-boot-starter-customize</module>
         <module>spring-boot-starter-customize-test</module>
+        <module>spring-boot-starter-memcache</module>
+        <module>spring-boot-logback</module>
+        <module>spring-boot-actuator</module>
+        <module>spring-boot-test</module>
     </modules>
 
     <properties>
