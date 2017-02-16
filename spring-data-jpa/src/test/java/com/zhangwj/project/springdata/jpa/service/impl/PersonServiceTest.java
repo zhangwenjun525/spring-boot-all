@@ -29,7 +29,7 @@ public class PersonServiceTest {
      */
     @Test
     public void testSave() throws Exception {
-
+      personService.save(new Person("章文君", 27, "杭州"));
     }
 
     /**
@@ -70,4 +70,18 @@ public class PersonServiceTest {
         personService.findByIdInOrderByIdDesc(1,2).forEach(System.out::println);
     }
 
+    @Test
+    public void testList(){
+        personService.list().forEach(System.out::println);
+    }
+
+    @Test
+    public void testTakeByName(){
+        personService.takeByName("章文君").forEach(System.out::println);
+    }
+
+    @Test
+    public void testUpdataPerson(){
+        personService.updatePerson(1,"李结红");
+    }
 } 

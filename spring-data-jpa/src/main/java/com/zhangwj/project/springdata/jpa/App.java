@@ -5,6 +5,7 @@ import com.zhangwj.project.springdata.jpa.service.IPersonService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * Create by IntelliJ IDEA
@@ -13,6 +14,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * Date: 2017/2/16
  * Time: 14:45
  */
+@EnableTransactionManagement
 @ComponentScan
 @EnableJpaRepositories
 public class App {

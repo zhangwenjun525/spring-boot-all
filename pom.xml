@@ -32,6 +32,7 @@
         <module>spring-boot-logback</module>
         <module>spring-boot-actuator</module>
         <module>spring-boot-test</module>
+        <module>spring-boot-jpa-demo</module>
         <module>spring-data-jpa</module>
     </modules>
 

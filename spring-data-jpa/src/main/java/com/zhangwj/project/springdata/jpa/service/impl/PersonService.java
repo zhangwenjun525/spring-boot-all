@@ -58,4 +58,19 @@ public class PersonService implements IPersonService {
     public List<Person> findByIdInOrderByIdDesc(Integer... ids) {
         return personRepository.findByIdInOrderByIdDesc(ids);
     }
+
+    @Override
+    public List<Person> list() {
+        return personRepository.list();
+    }
+
+    @Override
+    public List<Person> takeByName(String name) {
+        return personRepository.takeByName(name);
+    }
+
+    @Override
+    public Integer updatePerson(Integer id, String name) {
+        return personRepository.updatePerson(id, name);
+    }
 }
