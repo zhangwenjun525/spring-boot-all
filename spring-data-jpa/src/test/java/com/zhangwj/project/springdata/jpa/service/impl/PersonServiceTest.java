@@ -6,7 +6,6 @@ import com.zhangwj.project.springdata.jpa.service.IPersonService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.domain.Page;
 
@@ -83,5 +82,43 @@ public class PersonServiceTest {
     @Test
     public void testUpdataPerson(){
         personService.updatePerson(1,"李结红");
+    }
+
+    @Test
+    public void testByName(){
+        personService.byName("章文君").forEach(System.out::println);
+    }
+
+    @Test
+    public void testByNameNative(){
+        personService.byNameNative("章文君").forEach(System.out::println);
+    }
+
+    @Test
+    public void testByNameNative2(){
+        personService.byNameNative2("章文君").forEach(System.out::println);
+    }
+
+    @Test
+    public void testFindAddress(){
+        personService.findAddress().forEach(System.out::println);
+    }
+
+    @Test
+    public void testQueryAll(){
+        personService.queryAll().forEach(System.out::println);
+    }
+
+    @Test
+    public void testById(){
+        System.out.println(personService.byId(2));
+    }
+
+    @Test
+    public void testByPerson(){
+        Person person = new Person();
+        person.setId(2);
+        person.setName("章文君2");
+        System.out.println(personService.byPerson(person));
     }
 } 

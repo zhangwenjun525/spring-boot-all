@@ -10,6 +10,34 @@ import java.io.Serializable;
  * Date: 2017/2/16
  * Time: 14:59
  */
+@NamedQueries({
+        @NamedQuery(name = "byName", query = "SELECT p FROM Person p where p.name = :name")
+})
+@NamedNativeQueries({
+        @NamedNativeQuery(name = "byNameNative", query = "SELECT * FROM person where name = :name", resultClass = Person.class),
+        @NamedNativeQuery(name = "byNameNative2", query = "SELECT * FROM person where name = :name", resultSetMapping = "result"),
+        @NamedNativeQuery(name = "findAddress", query = "SELECT id, address FROM person", resultSetMapping = "result2")
+})
+@SqlResultSetMappings({
+        @SqlResultSetMapping(name = "result", entities = {
+                @EntityResult(
+                        entityClass = Person.class,
+                        fields = {
+                                @FieldResult(name = "id", column = "id"),
+                                @FieldResult(name = "name",column = "name"),
+                                @FieldResult(name = "age", column = "age"),
+                                @FieldResult(name = "address", column = "address")
+                        })
+        }),
+        @SqlResultSetMapping(name = "result2", classes = {
+                @ConstructorResult(targetClass = Address.class,
+                        columns = {
+                                @ColumnResult(name = "id", type = Integer.class),
+                                @ColumnResult(name = "address", type = String.class)
+                        }
+                )
+        })
+})
 @Table(name = "person")
 @Entity
 public class Person implements Serializable{

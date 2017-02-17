@@ -1,7 +1,9 @@
 package com.zhangwj.project.springdata.jpa.repository;
 
+import com.zhangwj.project.springdata.jpa.domain.Address;
 import com.zhangwj.project.springdata.jpa.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,7 +17,7 @@ import java.util.List;
  * Date: 2017/2/16
  * Time: 15:23
  */
-public interface PersonRepository extends JpaRepository<Person, Integer> {
+public interface PersonRepository extends JpaRepository<Person, Integer> , JpaSpecificationExecutor<Person>{
 
     List<Person> findByName(String name);
 
@@ -37,5 +39,17 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
     @Query("UPDATE Person p set p.name = :name where p.id = :id")
     @Modifying
     Integer updatePerson(@Param(value = "id") Integer id, @Param(value = "name")String name);
+
+    @Query(name = "byName")
+    List<Person> byName(@Param(value = "name")String name);
+
+    @Query(name = "byNameNative", nativeQuery = true)
+    List<Person> byNameNative(@Param(value = "name")String name);
+
+    @Query(name = "byNameNative2", nativeQuery = true)
+    List<Person> byNameNative2(@Param(value = "name")String name);
+
+    @Query(name = "findAddress", nativeQuery = true)
+    List<Address> findAddress();
 
 }

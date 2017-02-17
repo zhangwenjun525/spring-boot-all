@@ -1,5 +1,6 @@
 package com.zhangwj.project.springdata.jpa.service;
 
+import com.zhangwj.project.springdata.jpa.domain.Address;
 import com.zhangwj.project.springdata.jpa.domain.Person;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,4 +38,19 @@ public interface IPersonService {
 
     @Transactional
     Integer updatePerson(Integer id, String name);
+
+    List<Person> byName(String name);
+
+    List<Person> byNameNative(String name);
+
+    List<Person> byNameNative2(String name);
+
+    List<Address> findAddress();
+
+    List<Person> queryAll();
+
+    Person byId(Integer id);
+
+    List<Person> byPerson(Person person);
+
 }
