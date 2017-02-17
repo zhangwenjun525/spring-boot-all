@@ -121,4 +121,11 @@ public class PersonServiceTest {
         person.setName("章文君2");
         System.out.println(personService.byPerson(person));
     }
+
+    @Test
+    public void testByPerson2(){
+        Person person = new Person();
+        person.setId(1);
+        System.out.println(personService.byPerson2(person));
+    }
 } 

@@ -7,6 +7,7 @@ import com.zhangwj.project.springdata.jpa.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -140,5 +141,24 @@ public class PersonService implements IPersonService {
         }
         query.where(predicate);
         return entityManager.createQuery(query).getResultList();
+    }
+
+    @Override
+    public List<Person> byPerson2(Person person) {
+        return personRepository.findAll(new Specification<Person>() {
+            @Override
+            public Predicate toPredicate(Root<Person> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
+                Predicate predicate = null;
+                if(person.getId() != null){
+                    predicate = criteriaBuilder.equal(root.get("id"), person.getId());
+                }
+
+                if(!StringUtils.isEmpty(person.getName())){
+                    predicate = (predicate != null ? criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("name"), person.getName())) : criteriaBuilder.equal(root.get("name"), person.getName()));
+                }
+
+                return predicate;
+            }
+        });
     }
 }

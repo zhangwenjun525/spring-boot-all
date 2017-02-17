@@ -53,4 +53,5 @@ public interface IPersonService {
 
     List<Person> byPerson(Person person);
 
+    List<Person> byPerson2(Person person);
 }
