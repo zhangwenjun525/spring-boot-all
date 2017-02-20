@@ -1,7 +1,9 @@
 package com.zhangwj.project.springdata.jpa.service.impl;
 
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.zhangwj.project.springdata.jpa.domain.Address;
 import com.zhangwj.project.springdata.jpa.domain.Person;
+import com.zhangwj.project.springdata.jpa.domain.QPerson;
 import com.zhangwj.project.springdata.jpa.repository.PersonRepository;
 import com.zhangwj.project.springdata.jpa.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -145,7 +147,7 @@ public class PersonService implements IPersonService {
 
     @Override
     public List<Person> byPerson2(Person person) {
-        return personRepository.findAll(new Specification<Person>() {
+/*        return personRepository.findAll(new Specification<Person>() {
             @Override
             public Predicate toPredicate(Root<Person> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
                 Predicate predicate = null;
@@ -159,6 +161,17 @@ public class PersonService implements IPersonService {
 
                 return predicate;
             }
-        });
+        });*/
+        BooleanExpression expression = null;
+        if(person.getId() != null){
+            expression = QPerson.person.id.eq(person.getId());
+        }
+
+        if(!StringUtils.isEmpty(person.getName())){
+            expression = (expression != null) ? expression.and(QPerson.person.name.eq(person.getName())) : QPerson.person.name.eq(person.getName());
+        }
+
+        Page<Person> persons = personRepository.findAll(expression, new PageRequest(0, 10));
+        return persons.getContent();
     }
 }

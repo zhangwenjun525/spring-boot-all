@@ -126,6 +126,7 @@ public class PersonServiceTest {
     public void testByPerson2(){
         Person person = new Person();
         person.setId(1);
+        person.setName("章文君");
         System.out.println(personService.byPerson2(person));
     }
 } 

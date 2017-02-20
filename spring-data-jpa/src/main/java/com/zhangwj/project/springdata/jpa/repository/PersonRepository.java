@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QueryDslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
  * Date: 2017/2/16
  * Time: 15:23
  */
-public interface PersonRepository extends JpaRepository<Person, Integer> , JpaSpecificationExecutor<Person>{
+public interface PersonRepository extends JpaRepository<Person, Integer>, QueryDslPredicateExecutor<Person>{
 
     List<Person> findByName(String name);
 
