@@ -1,9 +1,7 @@
 package com.zhangwj.project.springdata.jpa.service.impl;
 
-import com.querydsl.core.types.dsl.BooleanExpression;
 import com.zhangwj.project.springdata.jpa.domain.Address;
 import com.zhangwj.project.springdata.jpa.domain.Person;
-import com.zhangwj.project.springdata.jpa.domain.QPerson;
 import com.zhangwj.project.springdata.jpa.repository.PersonRepository;
 import com.zhangwj.project.springdata.jpa.service.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
