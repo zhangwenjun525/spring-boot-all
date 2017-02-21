@@ -1,7 +1,9 @@
 package com.zhangwj.project.springdata.jpa;
 
+import com.zhangwj.project.springdata.jpa.repository.CustomRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -14,7 +16,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @ComponentScan
-@EnableJpaRepositories
+@EnableJpaRepositories(repositoryBaseClass = CustomRepository.class)
+@EnableJpaAuditing(auditorAwareRef = "auditorAware", dateTimeProviderRef = "dateTimeProvider")
 public class App {
 
     public static void main(String[] args) {

@@ -147,7 +147,7 @@ public class PersonService implements IPersonService {
 
     @Override
     public List<Person> byPerson2(Person person) {
-/*        return personRepository.findAll(new Specification<Person>() {
+        return personRepository.findAll(new Specification<Person>() {
             @Override
             public Predicate toPredicate(Root<Person> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
                 Predicate predicate = null;
@@ -161,8 +161,8 @@ public class PersonService implements IPersonService {
 
                 return predicate;
             }
-        });*/
-        BooleanExpression expression = null;
+        });
+/*        BooleanExpression expression = null;
         if(person.getId() != null){
             expression = QPerson.person.id.eq(person.getId());
         }
@@ -172,6 +172,6 @@ public class PersonService implements IPersonService {
         }
 
         Page<Person> persons = personRepository.findAll(expression, new PageRequest(0, 10));
-        return persons.getContent();
+        return persons.getContent();*/
     }
 }

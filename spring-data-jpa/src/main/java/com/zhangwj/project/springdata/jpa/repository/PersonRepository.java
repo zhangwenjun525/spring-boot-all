@@ -18,7 +18,7 @@ import java.util.List;
  * Date: 2017/2/16
  * Time: 15:23
  */
-public interface PersonRepository extends JpaRepository<Person, Integer>, QueryDslPredicateExecutor<Person>{
+public interface PersonRepository extends JpaRepository<Person, Integer>, JpaSpecificationExecutor<Person>{
 
     List<Person> findByName(String name);
 
