@@ -10,6 +10,7 @@ import java.io.Serializable;
  * Date: 2017/2/21
  * Time: 22:18
  */
+@Cacheable
 @Table(name = "employee")
 @Entity
 public class Employee implements Serializable {

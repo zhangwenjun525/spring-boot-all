@@ -48,4 +48,9 @@ public class EmployeeServiceTest {
         employeeService.save(employee);
     }
 
+    @Test
+    public void testFindById(){
+        System.out.println(employeeService.getById(1));
+    }
+
 }
